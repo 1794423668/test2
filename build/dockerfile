@@ -1,13 +1,15 @@
-FROM {{ BASEIMAGE }}
-MAINTAINER tianyu@spacesystech.com
-LABEL Name=rest-cigsystem-user Version=1.0.0 
-RUN mkdir -p /root/www
-WORKDIR /root/www
-ADD ./src .
-ADD ./package.json .
-ADD ./pm2 ./pm2
-RUN npm config set registry https://registry.npm.taobao.org
-RUN npm config set @cig:registry https://r.ispacesys.cn
-RUN npm i --production
+# Version 0.1
+
+# 基础镜像
+FROM registry.ispacesys.cn/pm2/restbase:7-centos
+
+# 维护者信息
+MAINTAINER 1794423668@qq.com
+
+# 镜像操作命令
+RUN apt-get -yqq update && apt-get install -yqq apache2 && apt-get clean
+
+# 容器启动命令
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+
 EXPOSE 80
-ENTRYPOINT pm2 startOrReload ./pm2/prod.json --env production --no-daemon
