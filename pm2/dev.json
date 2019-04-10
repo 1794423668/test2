@@ -1,0 +1,23 @@
+{
+  "apps": [
+    {
+      "name": "rest-cigsystem-user",
+      "script": "./backend/www.js",
+      "node_args": [
+        "--inspect=0.0.0.0:7104"
+      ],
+      "env": {
+        "COMMON_VARIABLE": "true",
+        "NODE_PATH": "/usr/lib/node_modules",
+        "LD_LIBRARY_PATH": "/opt/oracle/instantclient",
+        "PORT": 3019
+      },
+      "env_dev": {
+        "NODE_ENV": "dev"
+      },
+      "env_production": {
+        "NODE_ENV": "production"
+      }
+    }
+  ]
+}

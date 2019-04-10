@@ -1,0 +1,25 @@
+clone:
+  git:
+    image: registry.ispacesys.cn/public/drone-git:1.4.0
+
+pipeline:
+  docker:
+    image: registry.ispacesys.cn/devops/docker:1.0
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    base: registry.ispacesys.cn/pm2/restbase:7-centos
+    repo: cig/rest-cigsystem-user
+  deploy-test:
+    image: registry.ispacesys.cn/devops/kubernetes:1.0
+    namespace: test-zhzl
+    deployment: usermanage
+    container: usermanage
+    registry: registry.ispacesys.cn
+    secrets:
+      - source: kubernetes_server_test
+        target: kubernetes_server    
+      - source: kubernetes_cert_test
+        target: kubernetes_cert    
+      - source: kubernetes_token_test
+        target: kubernetes_token
+        branches: [ dev,master ]

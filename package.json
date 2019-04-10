@@ -1,0 +1,42 @@
+{
+  "name": "rest-cigsystem-user",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/backend/www.js",
+  "scripts": {
+    "启动": "src/backend/www.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@gitlab.ispacesys.cn:10022/cig/rest-cigsystem-user"
+  },
+  "author": "tianyu",
+  "license": "ISC",
+  "dependencies": {
+    "async": "2.0.1",
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "crypto-browserify": "^3.12.0",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "md5": "^2.2.1",
+    "morgan": "~1.6.1",
+    "node-schedule": "1.3.0",
+    "request": "^2.85.0",
+    "node-xlsx": "0.12.1",
+    "swig": "1.4.2"
+  },
+  "devDependencies": {
+    "@cig/restbase": "^0.1.5",
+    "babel": "~6.23.0",
+    "babel-core": "~6.24.0",
+    "babel-loader": "~6.4.1",
+    "babel-preset-es2015": "~6.24.0",
+    "babelify": "~7.3.0",
+    "gulp": "~3.9.1",
+    "gulp-data": "^1.2.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-swig": "^0.8.0",
+    "del": "~2.2.2"
+  }
+}

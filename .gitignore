@@ -1,32 +1,13 @@
-# Prerequisites
-*.d
+# vscode
+.vscode/
+*.log
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# nodejs
+node_modules/
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+# build
+.temp/
+.tmp/
+dist/
+docker-compose*
+typings

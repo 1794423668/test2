@@ -1,0 +1,19 @@
+# Do not include the Docker build pipeline itself.
+build/Dockerfile
+build/run-gulp-in-docker.sh
+
+# Ignore all development artifacts so that the build is always clean.
+.git/
+.tmp/
+.temp/
+.vscode/
+build/
+docs/
+node_modules/
+.babelrc
+.gitignore
+docker-compose.debug.yml
+docker-compose.yml
+gulpfile.babel.js
+jsconfig.json
+README.md
